@@ -1,6 +1,6 @@
 {
   "name": "resumeforge-ai",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -35,7 +35,8 @@
     "autoprefixer": "10.4.19",
     "@upstash/ratelimit": "2.0.3",
     "@upstash/redis": "1.34.0",
-    "clsx": "2.1.1"
+    "clsx": "2.1.1",
+    "lucide-react": "0.468.0"
   },
   "devDependencies": {
     "@types/node": "20.14.13",
