@@ -1,7 +1,10 @@
-// STATUS: Implemented.
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -15,11 +18,11 @@ module.exports = {
           dark: "#9C7C46",
         },
         skyline: {
-          DEFAULT: "#A9C0D9", // soft blue accent
+          DEFAULT: "#A9C0D9",
           light: "#DCE7F0",
         },
         lavender: {
-          DEFAULT: "#C9C2DA", // very subtle lavender accent
+          DEFAULT: "#C9C2DA",
           light: "#EDEAF4",
         },
         glass: "rgba(255,255,255,0.55)",
@@ -31,7 +34,7 @@ module.exports = {
         mono: ["var(--font-mono)", "monospace"],
       },
       fontSize: {
-        "hero": ["clamp(2.8rem, 6vw, 6.5rem)", { lineHeight: "0.98", letterSpacing: "-0.02em" }],
+        hero: ["clamp(2.8rem, 6vw, 6.5rem)", { lineHeight: "0.98", letterSpacing: "-0.02em" }],
         "display-lg": ["clamp(2.2rem, 4vw, 3.6rem)", { lineHeight: "1.05", letterSpacing: "-0.015em" }],
       },
       boxShadow: {
@@ -45,25 +48,6 @@ module.exports = {
       },
       backdropBlur: {
         xs: "2px",
-      },
-      keyframes: {
-        floaty: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-14px)" },
-        },
-        floatySlow: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-8px)" },
-        },
-        countPulse: {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.4" },
-        },
-      },
-      animation: {
-        floaty: "floaty 6s ease-in-out infinite",
-        "floaty-slow": "floatySlow 8s ease-in-out infinite",
-        "count-pulse": "countPulse 1.6s ease-in-out infinite",
       },
     },
   },
