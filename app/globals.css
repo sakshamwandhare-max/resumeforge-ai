@@ -1,1 +1,129 @@
+@import "tailwindcss";
 
+:root {
+  --background: #071014;
+  --foreground: #f8fafc;
+
+  --surface: #0b171c;
+  --surface-light: #102229;
+
+  --primary: #6ee7b7;
+  --primary-soft: rgba(110, 231, 183, 0.1);
+
+  --secondary: #a3e635;
+
+  --muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(
+      circle at 75% 10%,
+      rgba(20, 184, 166, 0.08),
+      transparent 30%
+    ),
+    var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: var(--primary);
+  color: #071014;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #071014;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1b3035;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a474d;
+}
+
+/* Reusable glass surface */
+
+.rf-surface {
+  background: rgba(11, 23, 28, 0.8);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+}
+
+/* Gradient text */
+
+.rf-gradient-text {
+  background: linear-gradient(
+    100deg,
+    #6ee7b7 0%,
+    #a3e635 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Subtle grid */
+
+.rf-grid {
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 40px 40px;
+}
+
+/* Accessibility */
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
